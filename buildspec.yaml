@@ -46,9 +46,9 @@ phases:
 #     file-format: report-format
 artifacts:
   files:
-    - ~/binary-run
+    - $HOME/binary-run
   name: runThis
   discard-paths: yes
-  base-directory: ~/
+  # base-directory: ~/
   enable-symlinks: no
   s3-prefix: prefix
