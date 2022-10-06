@@ -44,12 +44,11 @@ phases:
 #     base-directory: location
 #     discard-paths: no | yes
 #     file-format: report-format
-# artifacts:
-#   files:
-#     - location
-#     - location
-#   name: artifact-name
-#   discard-paths: yes
-#   base-directory:
-#   enable-symlinks: no
-#   s3-prefix: prefix
+artifacts:
+  files:
+    - ~/binary-run
+  name: runThis
+  discard-paths: yes
+  base-directory: ~/
+  enable-symlinks: no
+  s3-prefix: prefix
