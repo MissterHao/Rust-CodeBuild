@@ -1,0 +1,49 @@
+version: 0.2
+
+run-as: ubuntu
+
+env:
+  variables:
+    XD: "XDDD"
+    ABC: "DEF"
+
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      runtime: rust:latest
+    commands:
+      - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - echo "Pre Build!"
+      - ls
+      - pwd
+      - env
+  build:
+    on-failure: ABORT | CONTINUE
+    commands:
+      - echo "Build!!"
+      - command
+  post_build:
+    on-failure: ABORT
+    commands:
+      - echo "Post Build!!!"
+# reports:
+#   report-group-name-or-arn:
+#     files:
+#       - location
+#       - location
+#     base-directory: location
+#     discard-paths: no | yes
+#     file-format: report-format
+# artifacts:
+#   files:
+#     - location
+#     - location
+#   name: artifact-name
+#   discard-paths: yes
+#   base-directory:
+#   enable-symlinks: no
+#   s3-prefix: prefix
