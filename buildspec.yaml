@@ -1,7 +1,5 @@
 version: 0.2
 
-run-as: ubuntu
-
 env:
   shell: bash
   variables:
@@ -14,7 +12,7 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
-      - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+      - "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
   pre_build:
     on-failure: ABORT
     commands:
