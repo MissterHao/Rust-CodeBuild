@@ -12,7 +12,7 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
-      - "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+      - "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
   pre_build:
     on-failure: ABORT
     commands:
