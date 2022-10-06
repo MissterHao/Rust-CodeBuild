@@ -46,7 +46,7 @@ phases:
 #     file-format: report-format
 artifacts:
   files:
-    - $HOME/binary-run
+    - binary-run
   name: runThis
   discard-paths: yes
   # base-directory: ~/
