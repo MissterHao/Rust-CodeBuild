@@ -13,6 +13,7 @@ phases:
       python: 3.9
     commands:
       - "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+      - "source '$HOME/.cargo/env'"
   pre_build:
     on-failure: ABORT
     commands:
