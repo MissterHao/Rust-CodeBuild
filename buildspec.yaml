@@ -3,6 +3,7 @@ version: 0.2
 run-as: ubuntu
 
 env:
+  shell: bash
   variables:
     XD: "XDDD"
     ABC: "DEF"
@@ -11,7 +12,7 @@ phases:
   install:
     on-failure: ABORT
     runtime-versions:
-      runtime: python
+      python: 3.9
     commands:
       - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   pre_build:
@@ -21,8 +22,9 @@ phases:
       - ls
       - pwd
       - env
+      - cargo help
   build:
-    on-failure: ABORT | CONTINUE
+    on-failure: ABORT
     commands:
       - echo "Build!!"
       - python a.py
